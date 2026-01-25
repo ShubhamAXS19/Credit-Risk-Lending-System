@@ -6,3 +6,16 @@ ruff
 tqdm
 typer
 -e .
+
+fastapi
+uvicorn
+streamlit
+pandas
+numpy
+scikit-learn
+xgboost
+lightgbm
+matplotlib
+seaborn
+requests
+nbformat
