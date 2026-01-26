@@ -1,10 +1,58 @@
-# project_name
 
-<a target="_blank" href="https://cookiecutter-data-science.drivendata.org/">
-    <img src="https://img.shields.io/badge/CCDS-Project%20template-328F97?logo=cookiecutter" />
-</a>
+# Credit Risk & Lending System
 
-A short description of the project.
+A comprehensive system for credit default prediction, loan assessment, and risk management.
+
+## Setup & usage
+
+### Prerequisites
+- Python 3.11+
+- [Docker](https://www.docker.com/) (optional, for containerized execution)
+
+**macOS Users**: You must install `libomp` for LightGBM to work:
+```bash
+brew install libomp
+```
+
+### 1. Installation
+
+Create a virtual environment and install dependencies:
+
+```bash
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+### 2. Running Locally
+
+#### Backend API
+Start the FastAPI backend:
+```bash
+uvicorn src.app.main:app --reload --port 8000
+```
+The API documentation will be available at [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs).
+
+You can also run a quick local test script:
+```bash
+python scripts/run_local_test.py
+```
+
+#### Frontend Dashboard
+Start the Streamlit application:
+```bash
+streamlit run src/frontend/app.py
+```
+Access the dashboard at [http://localhost:8501](http://localhost:8501).
+
+### 3. Running with Docker
+
+Build and run the entire stack (API):
+
+```bash
+docker-compose up --build
+```
+The API will be available at [http://localhost:8000](http://localhost:8000).
 
 ## Project Organization
 
@@ -43,11 +91,18 @@ A short description of the project.
     │
     ├── __init__.py             <- Makes src a Python module
     │
+    ├── app                     <- FastAPI application
+    │   ├── main.py             <- App entry point
+    │   └── api                 <- API routes
+    │
     ├── config.py               <- Store useful variables and configuration
     │
     ├── dataset.py              <- Scripts to download or generate data
     │
     ├── features.py             <- Code to create features for modeling
+    │
+    ├── frontend                <- Streamlit dashboard
+    │   └── app.py
     │
     ├── modeling                
     │   ├── __init__.py 
