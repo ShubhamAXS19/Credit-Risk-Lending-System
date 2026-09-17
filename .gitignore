@@ -1,6 +1,9 @@
 # Data
 /data/
 
+# Generated outputs & plots
+/outputs/
+
 # models 
 /models
 

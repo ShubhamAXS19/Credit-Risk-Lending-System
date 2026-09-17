@@ -23,3 +23,13 @@ nbformat
 
 joblib
 pydantic
+shap
+lifelines
+statsmodels
+optuna
+plotly
+catboost
+pytest
+pytest-cov
+mlflow
+scipy
